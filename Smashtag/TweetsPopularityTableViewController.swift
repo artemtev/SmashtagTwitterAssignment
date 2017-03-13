@@ -49,6 +49,7 @@ class TweetsPopularityTableViewController: CoreDataTableViewController {
             fetchedResultsController =
                 resultsController as? NSFetchedResultsController<NSFetchRequestResult>
         } else {
+            
             fetchedResultsController = nil
         }
     }
