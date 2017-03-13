@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Mension" representedClassName=".Mension" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="keyword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="term" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SearchTerm" inverseName="mensions" inverseEntity="SearchTerm" syncable="YES"/>
+    </entity>
+    <entity name="SearchTerm" representedClassName=".SearchTerm" syncable="YES">
+        <attribute name="term" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="mensions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Mension" inverseName="term" inverseEntity="Mension" syncable="YES"/>
+        <relationship name="tweets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TweetCD" inverseName="terms" inverseEntity="TweetCD" syncable="YES"/>
+    </entity>
+    <entity name="TweetCD" representedClassName=".TweetCD" syncable="YES">
+        <attribute name="posted" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="terms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SearchTerm" inverseName="tweets" inverseEntity="SearchTerm" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Mension" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="SearchTerm" positionX="286" positionY="-171" width="128" height="88"/>
+        <element name="TweetCD" positionX="261" positionY="-18" width="128" height="103"/>
+    </elements>
+</model>
